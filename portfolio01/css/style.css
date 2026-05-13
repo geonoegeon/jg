@@ -1,0 +1,296 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    background-color: #c4dd61;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    color: #ffff00;
+    position: sticky;
+    padding: 0 5rem;
+    top: 0;
+    height: 100px;
+    z-index: 1;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .menu{
+    display: flex;
+}
+
+.menu-item{
+    position: relative;
+    text-align: center;
+    width: 150px;
+    padding: 1.5rem;
+}
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+}
+
+.navbar a:hover{
+    color: #ffff00;
+}
+
+.submenu{
+    display: none;
+    top: 100%;
+    left: 0;
+    position: absolute;
+    background-color: #333;
+    min-width: 180px;
+    z-index: 1;
+}
+
+.submenu li{
+    border-bottom: 1px solid #555;
+}
+
+.submenu li a{
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.submenu li a:hover{
+    background-color: #ff0;
+    color: #420679;
+}
+
+.menu-item:hover .submenu{
+    display: block;
+}
+
+.hero{
+    background-image: url(../img/back.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    position: relative;
+}
+
+.hero-content h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.hero-content p{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #000;
+}
+
+.cta-btn{
+    background-color: #000;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: 0;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover{
+    background-color: #ff0;
+    color: #000;
+}
+
+.t_work{
+    text-align: center;
+    background-color: #000;
+    padding-top: 30px;
+}
+
+.t_work h1{
+    color: #fff;
+    font-size: 3rem;
+
+}
+
+.work{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    gap: 50px;
+}
+
+.hexa{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.hexa:hover{
+    transform: translateY(-40px);
+}
+
+.shape{
+    clip-path: polygon(50% 0, 100% 30%, 100% 70%, 50% 100%, 0 70%, 0 30%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shape img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.hexa:hover .cap{
+    opacity: 1;
+}
+
+.hexa:nth-child(1) .cap{
+    background: linear-gradient(to top, rgb(221,7,210),transparent);
+}
+.hexa:nth-child(2) .cap{
+    background: linear-gradient(to top, rgb(221,7,210),transparent);
+}
+.hexa:nth-child(3) .cap{
+    background: linear-gradient(to top, rgb(221,7,210),transparent);
+}
+
+
+.about{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffbfbf;
+}
+
+.section-inner{
+    width: 1280px;
+    min-height: 100vh;
+}
+
+.accordion-content{
+    display: flex;
+    height: 100%;
+}
+
+/* 현재는 비어있지만, 확장이 가능하다 */
+.focus{
+    flex: 1;    /* 공간을 하나로 차지한다 */
+    background-color: #777;
+}
+
+.accordion{
+    flex: 4;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.accordion * {
+    transition: all 0.5s ease;
+}
+
+.accordion li{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    color: #000;
+    border-right: 1px solid rgba(0,0,0,0.5);
+}
+
+.accordion li:nth-child(1){
+    background-color: #174c3c;
+}
+.accordion li:nth-child(2){
+    background-color: #a1ca40;
+}
+.accordion li:nth-child(3){
+    background-color: #d3b73b;
+}
+
+.accordion li:last-child{
+    border-right: none;
+}
+
+.accordion li:hover{
+    flex: 4;
+}
+
+.accordion:hover li:not(:hover){    /* li:not(:hover) - 한 개의 li 위에 마우스를 올려놓은 것 | not(:hover) - 마우스를 안올린 것 */
+    flex: 0.8;
+}
+
+.number{
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.info{
+    transform: translateY(50px);
+}
+
+.info h2{
+    margin: 2rem;
+}
+
+.info p{
+    opacity: 0; /* 안 보이게 */
+    max-height: 0;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+.accordion li:hover .info{
+    transform: translateY(0);
+}
+
+.accordion li:hover .info p{
+    opacity: 1; /* 보이게 */
+    max-height: 200px;
+    margin-top: 10px;
+}
